@@ -1,9 +1,19 @@
 steps:
-name: 'gcr.io/cloud-builders/gcloud'
-args: ['auth', 'configure-docker', 'asia-northeast1-docker.pkg.dev']
-name: 'gcr.io/cloud-builders/docker'
-args: ['build', '-t', 'asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper/youtube-scraper:latest', '.']
-name: 'gcr.io/cloud-builders/docker'
-args: ['push', 'asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper/youtube-scraper:latest']
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["auth", "configure-docker", "asia-northeast1-docker.pkg.dev"]
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper/youtube-scraper:latest",
+        ".",
+      ]
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper/youtube-scraper:latest",
+      ]
 options:
-logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
