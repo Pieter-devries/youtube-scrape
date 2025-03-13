@@ -1,5 +1,7 @@
 steps:
   - name: "gcr.io/cloud-builders/gcloud"
+    args: ["components", "update"]
+  - name: "gcr.io/cloud-builders/gcloud"
     args: ["auth", "configure-docker", "asia-northeast1-docker.pkg.dev"]
   - name: "gcr.io/cloud-builders/docker"
     args:
