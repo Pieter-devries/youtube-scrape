@@ -6,16 +6,17 @@ steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
+        "run",
         "build",
         "-t",
-        "asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper/youtube-scraper:latest",
+        "asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper:latest",
         ".",
       ]
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
         "push",
-        "asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper/youtube-scraper:latest",
+        "asia-northeast1-docker.pkg.dev/looker-dcl-data/youtube-scraper:latest",
       ]
 options:
   logging: CLOUD_LOGGING_ONLY
